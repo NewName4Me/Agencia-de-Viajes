@@ -1,0 +1,35 @@
+extends ./layout/index
+
+block slider
+    div.slider 
+        h1 Río de Janerio 
+        em Aventura    
+
+block contenido 
+    main.container.mt-5 
+        h2.text-center.mb-5 Sobre Nosotros
+        div.row
+            div.col-md-6
+                p Lorem fistrum a gramenawer ex enim duis ullamco laboris a wan tempor al ataquerl. Ese hombree hasta luego Lucas apetecan eiusmod diodenoo eiusmod quis tempor ut duis apetecan.  
+                p Lorem fistrum a gramenawer ex enim duis ullamco laboris a wan tempor al ataquerl. Ese hombree hasta luego Lucas apetecan eiusmod diodenoo eiusmod quis tempor ut duis apetecan. 
+            div.col-md-6
+                img(src="/img/inicio_nosotros.jpg", alt="imagen nosotros" class="img-fluid")
+
+        hr
+
+        include ./layout/bloque_viajes
+
+    //añadir cupón de descuento
+    div.descuento 
+        div.container 
+            div.row 
+                div.col-md-6 
+                    div.contenido 
+                        h3 5% de Descuento 
+                        p.titulo Viaje a Canada 
+                        p.fecha 20 de Marzo de 2024 - 28 de Marzo de 2024
+                        p.precio $2,500 USD
+    div.container 
+        h2.text-center.mt-5 Testimoniales
+        include ./layout/bloque_testimoniales
+

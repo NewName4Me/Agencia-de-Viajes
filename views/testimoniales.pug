@@ -1,0 +1,35 @@
+extends ./layout/index
+
+block contenido 
+    main.container.mt-5 
+            h1.text-center #{pagina}
+
+            blockquote.text-center Lee sobre nuestros clientes y sus Experiencias
+            include ./layout/bloque_testimoniales
+
+            div.row 
+
+                div.col-md-12
+                    h2.d-block.w-100.text-center Agrega un Testimonial
+
+                    //Comprobar si existen errores en el formulario para mostrar alerta
+                    if(errores)
+                        each error in errores
+                            div.alert.col.alert-danger.text-center= error.mensaje
+
+                div.row.justify-content-center.col
+                    div.col-md-8
+                        form(action="/testimoniales" method="POST")
+                            div.form-group
+                                label(for="nombre") Nombre
+                                input#nombre(type="text",placeholder="Tu nombre",name="nombre",class="form-control", value=nombre) 
+
+                            div.form-group
+                                    label(for="correo") Correo
+                                    input#correo(type="text",placeholder="Tu correo",name="correo",class="form-control" ,value=correo) 
+
+                            div.form-group
+                                label(for="mensaje") Mensaje
+                                textarea#mensaje(name="mensaje", class="form-control", rows="3", placeholder="Tu mensaje")=mensaje
+
+                            input.btn.btn-success.btn-block(type="submit",value="Enviar Reseña")
