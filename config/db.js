@@ -1,15 +1,15 @@
 import sequelize, { Sequelize } from 'sequelize';
+import dotenv from 'dotenv';
 
-//Datos base de datos
-const dbName = 'agenciadeviajes';
-const dbUser = 'root';
-const dbPassword = 'User41641344';
+dotenv.config();
 
+/* //Datos base de datos
+const dbName = process.env.DB_NAME;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASS;
+ */
 //establecer conexion base de datos
-const db = new Sequelize(dbName, dbUser, dbPassword, {
-    host: '127.0.0.1',
-    port: '3306',
-    dialect: 'mysql',/* tambien acepta postgress */
+const db = new Sequelize(process.env.DATABASE_URL, {
     define: {
         timestamps: false
     },

@@ -10,3 +10,7 @@ se podrá leer el paso a paso mejor: [[https://github.com/NewName4Me/ProyectosCu
 + npm i pug
 + El archivo .dump es para la base de datos mySql
 + npm i mysql2 sequelize (ORM)
+
+Cosas que hacer para el deployment:
++ npm i dotenv
++ poner las variables de entorono donde haga falta
